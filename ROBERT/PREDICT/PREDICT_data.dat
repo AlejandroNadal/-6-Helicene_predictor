@@ -1,0 +1,297 @@
+ROBERT v 1.2.1 2025/03/20 17:19:36 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --ignore "[lambd,Nsubs,Names]" --names "Names" --y "R" --csv_name "dataset_Halogenos_Rmax_noD.csv" --corr_filter "False" --shap_show "16" --model "NN"
+
+
+o  Representation of predictions and analysis of ML models with the PREDICT module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model NN_90 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: R
+   - Names: Names
+   - Model: NN
+   - Descriptors: ['Pos1', 'Pos2', 'Pos3', 'Pos4', 'Pos5', 'Pos6', 'Pos7', 'Pos8', 'Pos9', 'Pos10', 'Pos11', 'Pos12', 'Pos13', 'Pos14', 'Pos15', 'Pos16']
+   - Training points: 957
+   - Validation points: 107
+   - Test points: 118
+      -  Train set with predicted results: PREDICT/NN_90_train_No_PFI.csv
+      -  Validation set with predicted results: PREDICT/NN_90_valid_No_PFI.csv
+      -  Test set with predicted results: PREDICT/NN_90_test_No_PFI.csv
+
+   o  Saving graphs and CSV databases in:
+      -  Graph in: PREDICT/Results_NN_90_No_PFI.png
+      -  Graph in: PREDICT/CV_variability_NN_90_No_PFI.png
+
+   o  Results saved in PREDICT/Results_NN_90_No_PFI.dat:
+      -  Points Train:Validation:Test = 957:107:118
+      -  Proportion Train:Validation:Test = 81:9:10
+      -  Number of descriptors = 16
+      -  Proportion (train+valid.) points:descriptors = 1064:16
+      -  Train : R2 = 0.84, MAE = 3.8e+01, RMSE = 5.2e+01
+      -  Valid. : R2 = 0.8, MAE = 4.3e+01, RMSE = 5.7e+01
+      -  Test : R2 = 0.7, MAE = 5.3e+01, RMSE = 7.2e+01
+
+   o  Cross-validation variation (with 5-fold CV) graph saved in PREDICT/CV_variability_NN_90_No_PFI.png:
+      -  Standard deviations saved in PREDICT/NN_90_test_No_PFI.csv in the R_pred_sd column
+      -  Average SD = 80.68
+      -  y range of dataset (train+valid.) = 85.74 to 932.77, total 847.03
+
+   o  SHAP plot saved in PREDICT/SHAP_NN_90_No_PFI.png
+      -  Pos2 = min: -4.2e+01, max: 7e+01
+      -  Pos14 = min: -1e+01, max: 7e+01
+      -  Pos3 = min: -3.4e+01, max: 6.8e+01
+      -  Pos15 = min: -1.4e+01, max: 5.8e+01
+      -  Pos1 = min: -1.2e+02, max: 3.9e+01
+      -  Pos12 = min: -1.4e+02, max: 3.5e+01
+      -  Pos11 = min: -7.2e+01, max: 3.4e+01
+      -  Pos4 = min: -1.3e+02, max: 3.4e+01
+      -  Pos5 = min: -1.2e+02, max: 3.1e+01
+      -  Pos16 = min: -1.1e+02, max: 2.5e+01
+      -  Pos13 = min: -1.2e+02, max: 2.4e+01
+      -  Pos10 = min: -9.3e+01, max: 2.3e+01
+      -  Pos7 = min: -6.8e+01, max: 2.2e+01
+      -  Pos6 = min: -6.1e+01, max: 1.9e+01
+      -  Pos8 = min: -4.7e+01, max: 1.6e+01
+      -  Pos9 = min: -4.9e+01, max: 1.5e+01
+
+   o  PFI plot saved in PREDICT/PFI_NN_90_No_PFI.png
+      Original score (from model.score, R2) = 0.8
+      -  Pos5 = 2.9e+01 ± 5.7
+      -  Pos1 = 2.7e+01 ± 3.7
+      -  Pos4 = 2.7e+01 ± 3.2
+      -  Pos12 = 2.6e+01 ± 4.3
+      -  Pos13 = 2.5e+01 ± 5.7
+      -  Pos16 = 2e+01 ± 2.8
+      -  Pos11 = 1.9e+01 ± 4.0
+      -  Pos10 = 1.5e+01 ± 3.6
+      -  Pos2 = 1.3e+01 ± 3.1
+      -  Pos7 = 1.1e+01 ± 2.6
+      -  Pos15 = 7.9 ± 2.6
+      -  Pos6 = 7.0 ± 1.6
+      -  Pos8 = 5.9 ± 1.7
+      -  Pos9 = 3.4 ± 1.5
+      -  Pos14 = 2.4 ± 1.3
+      -  Pos3 = 1.4 ± 1.6
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_No_PFI.png.
+      Ideally, variables should show low correlations.
+      o  Correlations between variables are acceptable
+
+   o  Outliers plot saved in PREDICT/Outliers_NN_90_No_PFI.png
+      Train: 43 outliers out of 957 datapoints (4.5%)
+      -  6Heliceno_8-br_11-br_12-br_13-i_14-cl.log (3.1 SDs)
+      -  6Heliceno_2-br_3-br_5-f_12-f_14-br_15-br.log (3.6 SDs)
+      -  6Heliceno_2-f_11-cl_12-cl_13-i_15-br.log (3.7 SDs)
+      -  6Heliceno_2-f_3-br_4-i_5-br_16-i.log (4.0 SDs)
+      -  6Heliceno_3-br_5-cl_7-i_10-br_15-i_16-i.log (2.2 SDs)
+      -  6Heliceno_2-f_6-i_7-cl_8-i_12-cl.log (3.4 SDs)
+      -  6Heliceno_1-cl_2-cl_3-f_11-br_14-cl_16-cl.log (2.8 SDs)
+      -  6Heliceno_2-cl_4-cl_7-f_12-cl.log (2.1 SDs)
+      -  6Heliceno_2-i_15-i_16-i.log (6.3 SDs)
+      -  6Heliceno_1-br_3-i_13-br_14-cl_16-br.log (3.2 SDs)
+      -  6Heliceno_2-br_3-i_7-br_8-f_10-i_14-i.log (3.1 SDs)
+      -  6Heliceno_2-f_3-cl_12-br_13-i.log (3.1 SDs)
+      -  6Heliceno_1-cl_2-i_3-i.log (3.1 SDs)
+      -  6Heliceno_10-i_11-i_14-i.log (4.2 SDs)
+      -  6Heliceno_2-br_3-cl_7-f_10-br_15-br_16-br.log (4.1 SDs)
+      -  6Heliceno_9-br_12-f_14-cl_16-f.log (2.4 SDs)
+      -  6Heliceno_2-br_3-br_4-f_6-i_8-br_14-i.log (3.2 SDs)
+      -  6Heliceno_6-cl_15-i_16-br.log (2.4 SDs)
+      -  6Heliceno_1-f_3-i_6-f_9-cl_13-cl_16-br.log (2.1 SDs)
+      -  6Heliceno_3-i_6-i_7-f_10-f_12-cl_13-i.log (3.7 SDs)
+      -  6Heliceno_1-br_2-br_3-br_16-cl.log (2.2 SDs)
+      -  6Heliceno_2-cl_3-i_4-i_8-br.log (2.6 SDs)
+      -  6Heliceno_3-f_11-cl_12-i_14-cl.log (5.3 SDs)
+      -  6Heliceno_7-br_8-i_9-i_10-br_12-br_15-cl.log (2.6 SDs)
+      -  6Heliceno_1-f_2-i_3-br_4-i.log (5.0 SDs)
+      -  6Heliceno_1-cl_2-cl_3-i_10-i_12-f_15-i.log (3.9 SDs)
+      -  6Heliceno_4-cl_5-f_9-i_10-i_11-i_13-cl.log (3.2 SDs)
+      -  6Heliceno_1-i_2-cl_3-br_7-br_8-br_10-i.log (2.9 SDs)
+      -  6Heliceno_1-i_3-i_6-f_10-f_13-f_16-br.log (3.1 SDs)
+      -  6Heliceno_2-f_6-i_7-cl_9-br_10-cl_15-f.log (2.6 SDs)
+      -  6Heliceno_3-i_5-i_8-cl_9-f.log (2.2 SDs)
+      -  6Heliceno_1-i_2-i_5-f_8-br_10-br_12-i.log (3.3 SDs)
+      -  6Heliceno_2-i_3-cl_4-i_5-f.log (2.2 SDs)
+      -  6Heliceno_1-f_4-br_5-f_8-cl_12-f_13-cl.log (2.2 SDs)
+      -  6Heliceno_15-i_16-i.log (5.2 SDs)
+      -  6Heliceno_1-br_2-f_3-cl_9-br_14-br_16-cl.log (2.0 SDs)
+      -  6Heliceno_1-br_2-i_5-cl_8-f_10-f.log (2.5 SDs)
+      -  6Heliceno_1-i_2-i_9-i_11-br_15-cl.log (2.0 SDs)
+      -  6Heliceno_14-i_15-i.log (2.1 SDs)
+      -  6Heliceno_1-br_10-f_12-cl_13-i.log (2.9 SDs)
+      -  6Heliceno_1-i_2-i_3-cl_8-cl_9-f_12-f.log (3.8 SDs)
+      -  6Heliceno_1-f_4-i_5-cl.log (4.0 SDs)
+      -  6Heliceno_2-br_5-f_6-cl_8-f_12-br_15-cl.log (2.7 SDs)
+      Validation: 7 outliers out of 107 datapoints (6.5%)
+      -  6Heliceno_2-f_4-br_8-cl_9-br_11-cl_12-f.log (2.1 SDs)
+      -  6Heliceno_3-i_8-br_9-br_10-f_15-br_16-f.log (3.2 SDs)
+      -  6Heliceno_1-br_6-f_8-i_12-br_13-br_16-f.log (4.3 SDs)
+      -  6Heliceno_2-br_5-cl_7-cl_9-i_12-cl_15-i.log (2.3 SDs)
+      -  6Heliceno_2-i_4-i_5-cl_11-i_14-br_16-f.log (2.6 SDs)
+      -  6Heliceno_3-f_4-f_8-i_10-cl_11-i_12-cl.log (2.8 SDs)
+      -  6Heliceno_3-i_4-cl_5-cl_12-cl_15-br.log (2.2 SDs)
+      Test: 15 outliers out of 118 datapoints (12.7%)
+      -  6Heliceno_1-f_5-i_11-i_12-br_13-i.log (2.7 SDs)
+      -  6Heliceno_1-f_2-br_4-i_5-cl_12-i.log (4.2 SDs)
+      -  6Heliceno_1-br_12-br_13-i.log (3.0 SDs)
+      -  6Heliceno_1-f_3-i_5-i_6-f_15-i_16-i.log (6.9 SDs)
+      -  6Heliceno_6-i_9-br_10-cl_11-i_12-br_14-br.log (2.2 SDs)
+      -  6Heliceno_6-f_8-cl_11-cl_13-f_15-i_16-i.log (5.5 SDs)
+      -  6Heliceno_1-br_2-cl_4-f_7-br_13-br.log (2.2 SDs)
+      -  6Heliceno_5-i_6-i_9-cl_11-cl.log (3.3 SDs)
+      -  6Heliceno_2-br_3-cl_4-br_5-cl_13-br_14-br.log (2.5 SDs)
+      -  6Heliceno_4-f_6-i_10-br_11-br_13-cl_15-cl.log (2.0 SDs)
+      -  6Heliceno_1-cl_4-cl_8-cl_9-br_16-br.log (2.9 SDs)
+      -  6Heliceno_1-f_3-i_4-f_10-cl_11-br_16-i.log (2.7 SDs)
+      -  6Heliceno_2-cl_4-cl_8-br_11-cl_14-i_16-br.log (3.5 SDs)
+      -  6Heliceno_1-cl_3-i_4-f_10-f_16-i.log (2.2 SDs)
+      -  6Heliceno_8-cl_9-f_15-br_16-br.log (2.4 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_NN_90_No_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 72, Q2: 402, Q3: 555, Q4: 35
+      x  WARNING! Your data is not uniform (Q4 has 35 points while Q3 has 555)
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model NN_90_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: R
+   - Names: Names
+   - Model: NN
+   - Descriptors: ['Pos1', 'Pos2', 'Pos3', 'Pos4', 'Pos5', 'Pos6', 'Pos7', 'Pos9', 'Pos10', 'Pos11', 'Pos12', 'Pos13']
+   - Training points: 957
+   - Validation points: 107
+   - Test points: 118
+      -  Train set with predicted results: PREDICT/NN_90_train_PFI.csv
+      -  Validation set with predicted results: PREDICT/NN_90_valid_PFI.csv
+      -  Test set with predicted results: PREDICT/NN_90_test_PFI.csv
+
+   o  Saving graphs and CSV databases in:
+      -  Graph in: PREDICT/Results_NN_90_PFI.png
+      -  Graph in: PREDICT/CV_variability_NN_90_PFI.png
+
+   o  Results saved in PREDICT/Results_NN_90_PFI.dat:
+      -  Points Train:Validation:Test = 957:107:118
+      -  Proportion Train:Validation:Test = 81:9:10
+      -  Number of descriptors = 12
+      -  Proportion (train+valid.) points:descriptors = 1064:12
+      -  Train : R2 = 0.73, MAE = 5.4e+01, RMSE = 6.9e+01
+      -  Valid. : R2 = 0.62, MAE = 6.1e+01, RMSE = 7.8e+01
+      -  Test : R2 = 0.6, MAE = 6.4e+01, RMSE = 8.5e+01
+
+   o  Cross-validation variation (with 5-fold CV) graph saved in PREDICT/CV_variability_NN_90_PFI.png:
+      -  Standard deviations saved in PREDICT/NN_90_test_PFI.csv in the R_pred_sd column
+      -  Average SD = 87.8
+      -  y range of dataset (train+valid.) = 85.74 to 932.77, total 847.03
+
+   o  SHAP plot saved in PREDICT/SHAP_NN_90_PFI.png
+      -  Pos3 = min: -2.3e+01, max: 8.1e+01
+      -  Pos2 = min: -2.3e+01, max: 7.2e+01
+      -  Pos5 = min: -1.2e+02, max: 4.5e+01
+      -  Pos1 = min: -1.1e+02, max: 4.3e+01
+      -  Pos4 = min: -1.4e+02, max: 4.3e+01
+      -  Pos12 = min: -1.2e+02, max: 4e+01
+      -  Pos10 = min: -9.3e+01, max: 2.8e+01
+      -  Pos7 = min: -8.2e+01, max: 2.2e+01
+      -  Pos13 = min: -1.3e+02, max: 2.2e+01
+      -  Pos6 = min: -8e+01, max: 2e+01
+      -  Pos9 = min: -5.3e+01, max: 1.7e+01
+      -  Pos11 = min: -8e+01, max: 1.3e+01
+
+   o  PFI plot saved in PREDICT/PFI_NN_90_PFI.png
+      Original score (from model.score, R2) = 0.62
+      -  Pos4 = 2.7e+01 ± 6.5
+      -  Pos13 = 2.2e+01 ± 2.7
+      -  Pos12 = 2e+01 ± 3.0
+      -  Pos5 = 1.8e+01 ± 3.0
+      -  Pos1 = 1.8e+01 ± 4.5
+      -  Pos10 = 1.6e+01 ± 3.2
+      -  Pos11 = 1.1e+01 ± 3.1
+      -  Pos2 = 1e+01 ± 2.9
+      -  Pos7 = 6.2 ± 3.2
+      -  Pos6 = 6.0 ± 1.5
+      -  Pos3 = 4.5 ± 3.3
+      -  Pos9 = 1.2 ± 2.3
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_PFI.png.
+      Ideally, variables should show low correlations.
+      o  Correlations between variables are acceptable
+
+   o  Outliers plot saved in PREDICT/Outliers_NN_90_PFI.png
+      Train: 42 outliers out of 957 datapoints (4.4%)
+      -  6Heliceno_8-br_11-br_12-br_13-i_14-cl.log (2.2 SDs)
+      -  6Heliceno_1-i_2-cl_4-cl_9-i_13-br_15-i.log (3.0 SDs)
+      -  6Heliceno_2-br_3-br_5-f_12-f_14-br_15-br.log (4.7 SDs)
+      -  6Heliceno_2-f_3-br_4-i_5-br_16-i.log (3.2 SDs)
+      -  6Heliceno_2-f_6-i_7-cl_8-i_12-cl.log (3.3 SDs)
+      -  6Heliceno_2-i_15-i_16-i.log (8.0 SDs)
+      -  6Heliceno_1-cl_2-i_3-i.log (2.7 SDs)
+      -  6Heliceno_1-i_2-br_4-f_11-f_16-f.log (2.0 SDs)
+      -  6Heliceno_2-i_7-f_10-cl_15-f_16-br.log (2.1 SDs)
+      -  6Heliceno_2-f_5-f_8-cl_12-i_13-br_16-f.log (3.3 SDs)
+      -  6Heliceno_9-br_12-f_14-cl_16-f.log (3.0 SDs)
+      -  6Heliceno_3-i_8-br_9-br_10-f_15-br_16-f.log (3.3 SDs)
+      -  6Heliceno_2-cl_3-cl_5-cl_14-cl_15-cl.log (2.7 SDs)
+      -  6Heliceno_8-i_9-i_10-f_13-i.log (2.2 SDs)
+      -  6Heliceno_8-f_16-br.log (2.3 SDs)
+      -  6Heliceno_1-br_6-f_8-i_12-br_13-br_16-f.log (3.5 SDs)
+      -  6Heliceno_2-i_5-br_12-cl_14-cl_15-cl_16-br.log (2.3 SDs)
+      -  6Heliceno_2-i_4-i_5-cl_11-i_14-br_16-f.log (2.1 SDs)
+      -  6Heliceno_2-cl_3-i_4-i_8-br.log (2.1 SDs)
+      -  6Heliceno_3-f_4-f_8-i_10-cl_11-i_12-cl.log (2.9 SDs)
+      -  6Heliceno_13-i_16-f.log (3.4 SDs)
+      -  6Heliceno_1-br_7-br_8-i_9-i_15-cl.log (2.7 SDs)
+      -  6Heliceno_3-f_11-cl_12-i_14-cl.log (3.3 SDs)
+      -  6Heliceno_2-i_6-f_8-cl_13-i_14-cl_16-f.log (2.3 SDs)
+      -  6Heliceno_7-br_8-i_9-i_10-br_12-br_15-cl.log (3.9 SDs)
+      -  6Heliceno_12-br_16-cl.log (2.8 SDs)
+      -  6Heliceno_1-cl_2-cl_3-i_10-i_12-f_15-i.log (3.0 SDs)
+      -  6Heliceno_2-br_6-f_8-cl_13-cl_16-f.log (2.4 SDs)
+      -  6Heliceno_3-cl_8-i_9-br_13-i_15-f_16-f.log (2.7 SDs)
+      -  6Heliceno_4-f_10-i_13-br_14-br_15-f_16-i.log (2.3 SDs)
+      -  6Heliceno_1-cl_6-cl_15-br_16-i.log (2.2 SDs)
+      -  6Heliceno_10-cl_14-i_15-f_16-br.log (2.9 SDs)
+      -  6Heliceno_1-i_2-i_5-f_8-br_10-br_12-i.log (2.7 SDs)
+      -  6Heliceno_4-i_5-br.log (2.1 SDs)
+      -  6Heliceno_15-i_16-i.log (6.9 SDs)
+      -  6Heliceno_1-br_2-f_3-cl_9-br_14-br_16-cl.log (2.1 SDs)
+      -  6Heliceno_6-f_8-br_9-i_11-cl_14-f_16-f.log (2.2 SDs)
+      -  6Heliceno_8-f_16-cl.log (2.4 SDs)
+      -  6Heliceno_1-i_2-i_3-cl_8-cl_9-f_12-f.log (3.0 SDs)
+      -  6Heliceno_1-f_4-i_5-cl.log (3.1 SDs)
+      -  6Heliceno_12-br_13-i_14-cl_16-cl.log (3.4 SDs)
+      -  6Heliceno_1-cl_2-f_12-br_14-br_15-i.log (2.8 SDs)
+      Validation: 8 outliers out of 107 datapoints (7.5%)
+      -  6Heliceno_3-f_9-i_13-f_14-i_15-f.log (2.1 SDs)
+      -  6Heliceno_5-i_12-i_13-i.log (2.9 SDs)
+      -  6Heliceno_10-i_11-i_14-i.log (3.1 SDs)
+      -  6Heliceno_6-i_12-f_13-i_15-br_16-f.log (2.3 SDs)
+      -  6Heliceno_2-i_3-br_5-cl_12-i_13-cl_16-cl.log (3.1 SDs)
+      -  6Heliceno_1-f_2-i_3-br_4-i.log (4.5 SDs)
+      -  6Heliceno_3-br_6-br_11-i_16-f.log (2.5 SDs)
+      -  6Heliceno_5-cl_8-br_9-f_12-f_13-i_15-br.log (2.6 SDs)
+      Test: 12 outliers out of 118 datapoints (10.2%)
+      -  6Heliceno_1-f_5-i_11-i_12-br_13-i.log (2.9 SDs)
+      -  6Heliceno_1-f_2-br_4-i_5-cl_12-i.log (2.1 SDs)
+      -  6Heliceno_1-f_3-i_5-i_6-f_15-i_16-i.log (5.2 SDs)
+      -  6Heliceno_6-f_8-cl_11-cl_13-f_15-i_16-i.log (5.8 SDs)
+      -  6Heliceno_4-cl_7-i_13-i_16-cl.log (2.7 SDs)
+      -  6Heliceno_6-f_7-br_9-br_11-i_14-f_16-f.log (2.3 SDs)
+      -  6Heliceno_12-i_14-cl_16-br.log (2.6 SDs)
+      -  6Heliceno_3-i_8-cl_11-cl_16-f.log (3.2 SDs)
+      -  6Heliceno_7-cl_10-br_11-br_12-f_14-i_15-br.log (2.7 SDs)
+      -  6Heliceno_1-br_2-i_4-br_6-f_10-i_15-i.log (2.7 SDs)
+      -  6Heliceno_3-br_9-cl_10-f_11-br_13-f_15-br.log (2.2 SDs)
+      -  6Heliceno_3-i_5-f_14-i.log (2.9 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_NN_90_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 72, Q2: 402, Q3: 555, Q4: 35
+      x  WARNING! Your data is not uniform (Q4 has 35 points while Q3 has 555)
+
+Time PREDICT: 14.96 seconds
+
