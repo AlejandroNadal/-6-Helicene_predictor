@@ -1,0 +1,52 @@
+ROBERT v 1.2.1 2025/03/20 17:19:36 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --ignore "[lambd,Nsubs,Names]" --names "Names" --y "R" --csv_name "dataset_Halogenos_Rmax_noD.csv" --corr_filter "False" --shap_show "16" --model "NN"
+
+
+o  Starting tests to verify the prediction ability of the ML models with the VERIFY module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model NN_90 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: R
+   - Names: Names
+   - Model: NN
+   - Descriptors: ['Pos1', 'Pos2', 'Pos3', 'Pos4', 'Pos5', 'Pos6', 'Pos7', 'Pos8', 'Pos9', 'Pos10', 'Pos11', 'Pos12', 'Pos13', 'Pos14', 'Pos15', 'Pos16']
+   - Training points: 957
+   - Validation points: 107
+   - Test points: 118
+      -  Graph in: VERIFY/CV_train_valid_predict_NN_90_No_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_NN_90_No_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 57.05 + 10% & 25% threshold = 62.75 & 71.31
+         o y_mean: PASSED, RMSE = 126.23, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 171.1, higher than thresholds
+         o onehot: PASSED, RMSE = 76.93, higher than thresholds
+         - 5-fold CV : R2 = 0.71, MAE = 52.11, RMSE = 71.92
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model NN_90_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: R
+   - Names: Names
+   - Model: NN
+   - Descriptors: ['Pos1', 'Pos2', 'Pos3', 'Pos4', 'Pos5', 'Pos6', 'Pos7', 'Pos9', 'Pos10', 'Pos11', 'Pos12', 'Pos13']
+   - Training points: 957
+   - Validation points: 107
+   - Test points: 118
+      -  Graph in: VERIFY/CV_train_valid_predict_NN_90_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_NN_90_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 77.65 + 10% & 25% threshold = 85.41 & 97.06
+         o y_mean: PASSED, RMSE = 125.39, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 161.29, higher than thresholds
+         - onehot: UNCLEAR, RMSE = 85.54, higher than original, but close to fail
+         - 5-fold CV : R2 = 0.6, MAE = 64.83, RMSE = 84.73
+
+Time VERIFY: 2.83 seconds
+
