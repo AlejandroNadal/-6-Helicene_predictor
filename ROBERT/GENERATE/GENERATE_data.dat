@@ -1,0 +1,51 @@
+ROBERT v 1.2.1 2025/03/20 17:19:36 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --ignore "[lambd,Nsubs,Names]" --names "Names" --y "R" --csv_name "dataset_Halogenos_Rmax_noD.csv" --corr_filter "False" --shap_show "16" --model "NN"
+
+
+o  Starting generation of ML models with the GENERATE module
+
+o  Database dataset_Halogenos_Rmax_noD_CURATE.csv loaded successfully, including:
+   - 1182 datapoints
+   - 16 accepted descriptors
+   - 3 ignored descriptors
+   - 0 discarded descriptors
+
+o  Before hyproptimization, 10% of the data was separated as test set, using an even distribution of data points across the range of y values. The remaining data points will be split into training and validation.
+
+o  The database contains 1064 datapoints, the default random splitting will be used to select training and validation sets.
+
+o  Starting heatmap scan with 1 ML models (['NN']) and 4 training sizes ([60, 70, 80, 90]).
+   Heatmap generation:
+   - 1/24 - Training size: 60, ML model: NN, seed: 0 
+   - 2/24 - Training size: 60, ML model: NN, seed: 8 
+   - 3/24 - Training size: 60, ML model: NN, seed: 19 
+   - 4/24 - Training size: 60, ML model: NN, seed: 43 
+   - 5/24 - Training size: 60, ML model: NN, seed: 70 
+   - 6/24 - Training size: 60, ML model: NN, seed: 233 
+   - 7/24 - Training size: 70, ML model: NN, seed: 0 
+   - 8/24 - Training size: 70, ML model: NN, seed: 8 
+   - 9/24 - Training size: 70, ML model: NN, seed: 19 
+   - 10/24 - Training size: 70, ML model: NN, seed: 43 
+   - 11/24 - Training size: 70, ML model: NN, seed: 70 
+   - 12/24 - Training size: 70, ML model: NN, seed: 233 
+   - 13/24 - Training size: 80, ML model: NN, seed: 0 
+   - 14/24 - Training size: 80, ML model: NN, seed: 8 
+   - 15/24 - Training size: 80, ML model: NN, seed: 19 
+   - 16/24 - Training size: 80, ML model: NN, seed: 43 
+   - 17/24 - Training size: 80, ML model: NN, seed: 70 
+   - 18/24 - Training size: 80, ML model: NN, seed: 233 
+   - 19/24 - Training size: 90, ML model: NN, seed: 0 
+   - 20/24 - Training size: 90, ML model: NN, seed: 8 
+   - 21/24 - Training size: 90, ML model: NN, seed: 19 
+   - 22/24 - Training size: 90, ML model: NN, seed: 43 
+   - 23/24 - Training size: 90, ML model: NN, seed: 70 
+   - 24/24 - Training size: 90, ML model: NN, seed: 233 
+
+o  Heatmap_ML_models_No_PFI succesfully created in GENERATE/Raw_data
+
+o  Heatmap_ML_models_PFI succesfully created in GENERATE/Raw_data
+
+Time GENERATE: 74.16 seconds
+

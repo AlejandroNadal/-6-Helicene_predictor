@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,batch_size,hidden_layer_sizes,learning_rate_init,max_iter,validation_fraction,alpha,shuffle,tol,early_stopping,beta_1,beta_2,epsilon,rmse
+70,RND,NN,reg,8,R,Names,rmse,"['Pos1', 'Pos2', 'Pos3', 'Pos4', 'Pos5', 'Pos6', 'Pos7', 'Pos8', 'Pos9', 'Pos10', 'Pos11', 'Pos12']",32,[32],0.01,50,0.3,0.0001,True,0.0001,False,0.9,0.999,1e-08,86.91154070386531
